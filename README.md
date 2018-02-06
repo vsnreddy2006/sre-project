@@ -1,16 +1,15 @@
 # Build a local infrastructure
 
-Your task is to create a local fully automated infrastructure using the following tools: 
-
-- Ansible 
-- Vagrant
+Your task is to create a local fully automated infrastructure using the tools of your choice, deployed where you choose, (vagrant, aws, do, etc)
 
 This should identify your abilities to build an infrastructure from scratch using automated tools, and your abilities as a systems administrator.
 
 ### Requirements:
-Your task is to create a highly available two node cluster running a web application of your choice. The application must have a persistent store which will be shared by the nodes.   
+Your task is to create a highly available ELK (Elasticsearch, Logstash, kibana) cluster.
 
-This will be fronted by Nginx, and the entrypoint into the cluster should be from port 443. A self-signed certificate should be used on the listener.
+Filebeat should run on each box, forwarding traffic to logstash, which in turn is ingested into elasticsearch, and visible from kibana. 
+
+The entrypoint should be the kibana ui, listening on 443. A self-signed certificate should be used on the listener.
 
 Be security conscious. 
 
