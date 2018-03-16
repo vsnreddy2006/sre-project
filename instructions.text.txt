@@ -1,0 +1,21 @@
+Pre-conditions:
+1) Should have access to AWS cloud environment
+2) Generate the ACCES_KEY and ACCESS_SECRET of the AWS login and those will used to trigger terraform scripts
+3) This scripts assume VPC and subnet created with needed route table and Internet-gateway-attached
+4) Terraform should be installed to run terraform scripts 
+
+
+Steps:
+
+1) Run below command to clone the repository 
+	git clone https://github.com/vsnreddy2006/sre-project.git
+
+1. cd to sre-project
+
+2. Update the variable.tf with values(key-pair name to assign while creating EC2 instances,AWS ssh key path to connect the EC2 instances to run commands,VPC ID and subnet id)
+
+3. Export  AWS_ACCESS_KEY_ID and  AWS_SECRET_ACCESS_KEY varibled with values of your ACCESS_KEY and ACCESS_SECRET values or create (.aws/credintals) file under home directory with access_key and access_secret
+ 
+5. Run terraform init to initialize 
+6) terraform plan
+7) terraform apply
