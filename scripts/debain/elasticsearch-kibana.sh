@@ -19,7 +19,7 @@ sudo sysctl -w vm.max_map_count=262144
 
 sudo mv /tmp/kibana.yml /etc/kibana/kibana.yml
 sudo mkdir -p /etc/ssl/private/
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/kibana-selfsigned.key -out /etc/ssl/certs/kibana-selfsigned.crt
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -subj "/C=US/ST=IDAHO/L=BOISE/O=default/OU=default/CN=hostname"  -keyout /etc/ssl/private/kibana-selfsigned.key -out /etc/ssl/certs/kibana-selfsigned.crt
 sudo systemctl daemon-reload
 sudo systemctl enable kibana.service
 sudo systemctl start kibana.service
